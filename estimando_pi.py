@@ -23,6 +23,3 @@ if __name__ == '__main__':
     erro_relativo = abs(((monte_carlo(1000) - math.pi ) / (math.pi)) * 100)
     print(f'Erro absoluto: {erro_absoluto}')
     print(f'Erro relativo(%): {erro_relativo:.2f}')
-    
-
-
