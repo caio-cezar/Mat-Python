@@ -7,11 +7,6 @@ def monte_carlo(tiros):
         
     cont = 0
 
-    listaxin = []
-    listayin = []
-    listaxout = []
-    listayout = []
-
     for _ in range(tiros):
         x = random.uniform(-1.0,1.0)
         y = random.uniform(-1.0,1.0)
