@@ -1,8 +1,6 @@
 #importando bibliotecas
-import numpy as np
 import matplotlib.pyplot as plt
 import random
-import math
 
 #solicitando a quantidade de tiros
 tiros = int(input('Quantidade de tiros: '))
