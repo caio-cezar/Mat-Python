@@ -1,25 +1,39 @@
+#importando bibliotecas
 import numpy as np
+import matplotlib.pyplot as plt
 import random
 import math
 
-def monte_carlo(tiros):
-        
-    cont = 0
+#solicitando a quantidade de tiros
+tiros = int(input('Quantidade de tiros: '))
 
-    for _ in range(tiros):
-        x = random.uniform(-1.0,1.0)
-        y = random.uniform(-1.0,1.0)
+#contador e listas que guardarão os pontos dentro/fora do disco x^2 + y^2 <= 1
+cont = 0
 
-        c = (0,0)
+listaxin = []
+listayin = []
+listaxout = []
+listayout = []
 
-        if (x - c[0])**2 + (y - c[1])**2 <= 1:
-            cont += 1
+#loop com geração de números aleatórios
+for _ in range(tiros):
+    x = random.uniform(-1.0,1.0)
+    y = random.uniform(-1.0,1.0)
 
-    return 4 * cont/tiros
-    
-if __name__ == '__main__':  
-    print(monte_carlo(1000))
-    erro_absoluto = abs(monte_carlo(1000) - math.pi)
-    erro_relativo = abs(((monte_carlo(1000) - math.pi ) / (math.pi)) * 100)
-    print(f'Erro absoluto: {erro_absoluto}')
-    print(f'Erro relativo(%): {erro_relativo:.2f}')
+    c = (0,0)
+
+    if (x - c[0])**2 + (y - c[1])**2 <= 1:
+        listaxin.append(x)
+        listayin.append(y)
+        cont += 1
+    else:
+        listaxout.append(x)
+        listayout.append(y)
+
+print(4 * cont/tiros)
+
+#Plotando o gráfico com os pontos que caíram dentro/fora do disco
+plt.plot(listaxin, listayin,'o')
+plt.plot(listaxout, listayout, 'o')
+plt.title('Simulação de Monte Carlo')
+plt.show()
