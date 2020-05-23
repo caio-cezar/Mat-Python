@@ -14,12 +14,7 @@ def monte_carlo(tiros):
         c = (0,0)
 
         if (x - c[0])**2 + (y - c[1])**2 <= 1:
-            listaxin.append(x)
-            listayin.append(y)
             cont += 1
-        else:
-            listaxout.append(x)
-            listayout.append(y)
 
     return 4 * cont/tiros
     
