@@ -1,7 +1,13 @@
 def f(x):
+    """
+    Função em que será feita a aproximação da raíz no intervalo [a,b] usando o método da bisseção.
+    """
     return x**3 - 6*x**2 + 3*x + 1
 
 def bissec(inicio, fim, tol):
+    """
+    Método da bisseção com 3 parâmetros: início do intervalo, fim do intervalo e tolerância.
+    """
     n = 1
     if f(inicio) * f(fim) > 0:
         return None
